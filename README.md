@@ -42,6 +42,15 @@ pip install -r requirements.txt
 python app.py
 ```
 
+## Docker 部署
+```bash
+# 构建镜像
+docker build -t z-ai2api .
+
+# 运行容器（默认会映射到 8080 端口，可在 .env 中调整 PORT）
+docker run --env-file .env -p 8080:8080 z-ai2api
+```
+
 ## 环境
 使用 `.env` 文件进行配置。
 
