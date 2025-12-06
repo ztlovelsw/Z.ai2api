@@ -42,6 +42,26 @@ pip install -r requirements.txt
 python app.py
 ```
 
+### Docker 部署
+
+1. 构建镜像
+
+```bash
+docker build -t zai2api .
+```
+
+2. 使用环境变量或 `.env` 文件运行容器（默认端口 `8080`）
+
+```bash
+docker run -d \
+  --name zai2api \
+  -p 8080:8080 \
+  --env-file .env \
+  zai2api
+```
+
+> 若不使用 `.env`，可通过 `-e PROTOCOL=... -e BASE=... -e TOKEN=...` 传入环境变量。
+
 ## 环境
 使用 `.env` 文件进行配置。
 
